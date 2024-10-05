@@ -9,7 +9,8 @@ function Chat() {
       initialMessages: [
         {
           role: "assistant",
-          content: "Hello",
+          //   make this into string like JSON.stringify({data: {message: "Hello"}})
+          content: JSON.stringify({ data: { message: "Hello" } }),
         },
       ],
     });
@@ -17,7 +18,7 @@ function Chat() {
   return (
     <div className="w-full h-screen p-8">
       <div className="h-full flex flex-col p-4 border-2 rounded-md">
-        <div className="h-5/6">
+        <div className="h-5/6 overflow-auto">
           {messages.map((message, i) => (
             <div
               key={i}
@@ -32,9 +33,14 @@ function Chat() {
                   message.role == "assistant"
                     ? "max-w-96 bg-gray-200 p-2 m-2 rounded-lg"
                     : "max-w-96 bg-blue-200 p-2 m-2 rounded-lg"
+                  //   i > 1
+                  //     ? console.log(JSON.parse(message.content).data.message)
+                  //     : console.log("i is less than 1")
                 }
               >
-                {message.content}
+                {message.role == "assistant"
+                  ? JSON.parse(message.content).data.message
+                  : message.content}
               </h1>
             </div>
           ))}
