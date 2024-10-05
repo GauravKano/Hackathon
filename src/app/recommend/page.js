@@ -7,8 +7,8 @@ import Chat from "@/components/Chat";
 function page() {
   const [recommend_list, setRecommendList] = useState();
 
-  return <InfoForRecommendation />;
-  //   return <Chat />;
+  //   return <InfoForRecommendation />;
+  return <Chat />;
 }
 
 export default page;
