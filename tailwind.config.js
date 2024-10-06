@@ -15,6 +15,8 @@ module.exports = {
         "card-color": "#1D2E62",
         "card-border-color": "#3A4F97",
         "text-color": "#D6E1FF",
+        "hover-color": "#9EB1FF",
+        "nav-color": "#182449",
       },
     },
   },

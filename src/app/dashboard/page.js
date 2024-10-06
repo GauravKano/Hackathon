@@ -3,10 +3,12 @@
 import DisplayProductList from "@/components/DisplayProductList";
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
+import NavBar from "@/components/NavBar";
 
 function page() {
   const router = useRouter();
 
+  // temp data
   const [products, setProducts] = useState([
     {
       id: 1,
@@ -35,9 +37,10 @@ function page() {
   ]);
 
   return (
-    <div className="w-full h-full p-6">
-      <div className="space-y-2">
-        <div className="flex justify-between p-4">
+    <div className="w-full h-full">
+      <NavBar />
+      <div className="space-y-6 px-6">
+        <div className="flex justify-between px-4 py-6 border-b-2">
           <h1 className="text-3xl">Dashboard</h1>
           <div>
             <button
