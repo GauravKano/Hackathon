@@ -9,12 +9,13 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@clerk/nextjs": "^5.7.1",
     "@ai-sdk/openai": "^0.0.66",
+    "@clerk/nextjs": "^5.7.1",
     "@huggingface/inference": "^2.8.1",
     "@langchain/community": "^0.3.4",
     "@nanostores/react": "github:ai/react",
     "ai": "^3.4.9",
+    "mongodb": "^6.9.0",
     "next": "14.2.14",
     "react": "^18",
     "react-dom": "^18",

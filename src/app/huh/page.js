@@ -6,11 +6,39 @@ const CompanyFormPage = () => {
   const [industry, setIndustry] = useState("");
   const [startDate, setStartDate] = useState("");
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle form submission, e.g., send the data to an API or log it
-    console.log({ companyName, industry, startDate });
-  };
+  
+    const companyData = {
+      companyName,
+      industry,
+      startDate,
+    };
+    console.log(companyData);
+    try {
+      const response = await fetch('/api/companies', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(companyData),
+      });
+  
+      if (response.ok) {
+        const data = await response.json();
+        console.log(data.message); // Success message
+        // Optionally, reset form fields
+        setCompanyName('');
+        setIndustry('');
+        setStartDate('');
+      } else {
+        const errorData = await response.json();
+        console.error('Error:', errorData.error);
+      }
+    } catch (error) {
+      console.error('An error occurred:', error);
+    }
+  };  
 
   return (
     <div
@@ -64,7 +92,7 @@ const CompanyFormPage = () => {
             htmlFor="startDate"
             className="block text-gray-700 text-sm font-bold mb-2"
           >
-            Start Date
+            Company Start Date
           </label>
           <input
             type="date"
