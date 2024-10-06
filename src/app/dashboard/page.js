@@ -1,40 +1,42 @@
 "use client";
 
 import DisplayProductList from "@/components/DisplayProductList";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import NavBar from "@/components/NavBar";
+import { firestore } from "../../lib/firebase";
+import {
+  collection,
+  doc,
+  getDoc,
+  updateDoc,
+  deleteDoc,
+  addDoc,
+} from "firebase/firestore";
 
 export default function Dashboard() {
   const router = useRouter();
 
   // temp data
-  const [products, setProducts] = useState([
-    {
-      id: 1,
-      name: "Product 1",
-      description: "Description 1",
-      category: "Tune-up",
-    },
-    {
-      id: 2,
-      name: "Product 2",
-      description: "Description 2",
-      category: "Jumpstart",
-    },
-    {
-      id: 3,
-      name: "Product 3",
-      description: "Description 3",
-      category: "Jumpstart",
-    },
-    {
-      id: 4,
-      name: "Product 4",
-      description: "Description 4",
-      category: "Jumpstart",
-    },
-  ]);
+  const [products, setProducts] = useState([]);
+
+  const getProducts = async () => {
+    console.log("working1...");
+    const docRef = doc(collection(firestore, "companies"), "user_id");
+    const docSnap = await getDoc(docRef);
+
+    if (docSnap.exists()) {
+      const docData = docSnap.data();
+      setProducts(docData.products);
+    } else {
+      // doc.data() will be undefined in this case
+      console.log("No such document!");
+    }
+  };
+
+  useEffect(() => {
+    getProducts();
+  }, []);
 
   return (
     <div className="w-full h-full">

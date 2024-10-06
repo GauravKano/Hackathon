@@ -10,15 +10,8 @@ function DisplayProductList({ products }) {
         >
           <div className="flex justify-between">
             <div>
-              <h1 className="text-lg">{product.name}</h1>
+              <h1 className="text-lg">{product}</h1>
             </div>
-            <div>
-              <h1>{product.category}</h1>
-            </div>
-          </div>
-
-          <div>
-            <h1>{product.description}</h1>
           </div>
         </div>
       ))}
