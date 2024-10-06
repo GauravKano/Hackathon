@@ -14,7 +14,7 @@ function DisplayAcceleratorList({ recommend_list }) {
               <h1>{recommend.name}</h1>
               <h1>{recommend.type}</h1>
             </div>
-            <div>{recommend.description}</div>
+            <div>{recommend.shortDescription}</div>
           </div>
           <div className="w-1/12 flex items-center justify-center">
             <div>

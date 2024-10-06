@@ -14,7 +14,7 @@ const getDbSerchResults = async (embedding, category) => {
     data: [embedding],
     limit: 10,
     outputFields: ["category", "id", "name", "description", "distance"],
-    filter: `category == '${category}'`,
+    filter: category === "None" ? undefined : `category == '${category}'`,
   };
 
   try {

@@ -40,11 +40,11 @@ const getDbSerchResults = async (embedding, type) => {
 
     const resJson = await response.json();
 
-    if (!resJson.data) {
-      return [];
+    if (!resJson.data || resJson.data.length === 0) {
+      return null;
     }
 
-    return resJson.data;
+    return resJson.data[0];
   } catch (error) {
     console.error(error);
     throw error;
@@ -64,7 +64,7 @@ export async function POST(req) {
     // Get result from vector db
     const searchResult = await getDbSerchResults(embedding, type);
 
-    if (searchResult.length > 0) {
+    if (searchResult) {
       results.push(searchResult);
     }
   }
