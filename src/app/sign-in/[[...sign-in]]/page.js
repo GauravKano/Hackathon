@@ -1,7 +1,8 @@
-import { SignIn } from "@clerk/nextjs";
+import { SignIn, SignUp} from "@clerk/nextjs";
 import React from "react";
+import { redirect} from "next/navigation";
 
-function Page() {
+function page() {
   return (
     <div
       style={{
@@ -9,13 +10,13 @@ function Page() {
         justifyContent: 'center',
         alignItems: 'center',
         height: '100vh',
-        backgroundColor: '#3E63DD',
+        backgroundColor: '#141726',
       }}
     >
-      <SignIn />
+      <SignIn forceRedirectUrl="/dashboard"/>
+
     </div>
   );
 }
 
-export default Page;
-
+export default page;

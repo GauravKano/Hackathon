@@ -1,5 +1,6 @@
-import { SignUp} from "@clerk/nextjs";
+import { SignIn, SignUp} from "@clerk/nextjs";
 import React from "react";
+import { redirect} from "next/navigation";
 
 function page() {
   return (
@@ -9,10 +10,11 @@ function page() {
         justifyContent: 'center',
         alignItems: 'center',
         height: '100vh',
-        backgroundColor: '#3E63DD',
+        backgroundColor: '#141726',
       }}
     >
-      <SignUp />
+      <SignUp forceRedirectUrl="/huh"/>
+
     </div>
   );
 }

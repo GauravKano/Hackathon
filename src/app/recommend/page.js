@@ -1,11 +1,14 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
+
+import InfoForRecommendation from "@/components/InfoForRecommendation";
+import Chat from "@/components/Chat";
 
 function page() {
-  return (
-    <div>
-      <>recommend</>
-    </div>
-  );
+  const [recommend_list, setRecommendList] = useState();
+
+  return <InfoForRecommendation />;
+  //   return <Chat />;
 }
 
 export default page;
