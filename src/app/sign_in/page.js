@@ -1,12 +1,10 @@
 "use client";
 import React from "react";
 
-function SignIn() {
+export default function Signin() {
   return (
     <div>
       <>sign_in</>
     </div>
   );
 }
-
-export default SignIn;

@@ -5,7 +5,7 @@ import InfoForRecommendation from "@/components/InfoForRecommendation";
 import Chat from "@/components/Chat";
 import DisplayAcceleratorList from "@/components/DisplayAcceleratorList";
 
-function page() {
+export default function Recommend() {
   const [productsList, setProductsList] = useState([]);
   const [acceleratorList, setAcceleratorList] = useState([]);
 
@@ -19,5 +19,3 @@ function page() {
     </div>
   );
 }
-
-export default page;

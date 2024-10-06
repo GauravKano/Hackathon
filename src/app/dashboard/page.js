@@ -5,7 +5,7 @@ import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 import NavBar from "@/components/NavBar";
 
-function Dashboard() {
+export default function Dashboard() {
   const router = useRouter();
 
   // temp data
@@ -57,5 +57,3 @@ function Dashboard() {
     </div>
   );
 }
-
-export default Dashboard;
