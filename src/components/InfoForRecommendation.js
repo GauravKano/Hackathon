@@ -71,8 +71,8 @@ function InfoForRecommendation({ setAcceleratorList, setProductsList }) {
   };
 
   return (
-    <div className="w-full p-8">
-      <div className="p-5 border-2 space-y-4">
+    <div className="w-full py-4 px-10">
+      <div className="p-8 border-2 space-y-4">
         <h1 className="text-xl text-center">Recommendation Search</h1>
 
         <Error error={error} setError={setError} />
@@ -90,41 +90,43 @@ function InfoForRecommendation({ setAcceleratorList, setProductsList }) {
           />
         </div>
 
-        <div className="flex flex-col gap-2">
-          <h4>Category:</h4>
-          <select
-            className="border-black border rounded-sm"
-            value={category}
-            onChange={(e) => setCategory(e.target.value)}
-            disabled={loading}
-          >
-            <option value=""></option>
-            {categoryList.map((category, index) => (
-              <option key={index} value={category}>
-                {category}
-              </option>
-            ))}
-          </select>
-        </div>
-        <div className="flex flex-col gap-2">
-          <h4>Type:</h4>
-          <select
-            className="border-black border rounded-sm"
-            value={type}
-            onChange={(e) => setType(e.target.value)}
-            disabled={loading}
-          >
-            <option value=""></option>
-            {typeList.map((type, index) => (
-              <option key={index} value={type}>
-                {type}
-              </option>
-            ))}
-          </select>
+        <div className="flex space-x-6">
+          <div className="w-1/2 flex flex-col gap-2">
+            <h4>Category:</h4>
+            <select
+              className="border-black border rounded-lg p-1"
+              value={category}
+              onChange={(e) => setCategory(e.target.value)}
+              disabled={loading}
+            >
+              <option value=""></option>
+              {categoryList.map((category, index) => (
+                <option key={index} value={category}>
+                  {category}
+                </option>
+              ))}
+            </select>
+          </div>
+          <div className="w-1/2 flex flex-col gap-2">
+            <h4>Type:</h4>
+            <select
+              className="border-black border rounded-lg p-1"
+              value={type}
+              onChange={(e) => setType(e.target.value)}
+              disabled={loading}
+            >
+              <option value=""></option>
+              {typeList.map((type, index) => (
+                <option key={index} value={type}>
+                  {type}
+                </option>
+              ))}
+            </select>
+          </div>
         </div>
 
         <div className="flex justify-end">
-          <button className="button" onClick={search} disabled={loading}>
+          <button className="button my-2" onClick={search} disabled={loading}>
             {loading ? "Searching..." : "Search"}
           </button>
         </div>
