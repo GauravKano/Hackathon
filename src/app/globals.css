@@ -14,3 +14,8 @@
   background-color: #182449;
   border: 1px solid #435db1;
 }
+
+textarea,
+select {
+  color: #182449;
+}

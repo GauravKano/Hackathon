@@ -39,6 +39,7 @@ export default function Dashboard() {
   return (
     <div className="w-full h-full">
       <NavBar />
+
       <div className="space-y-6 px-6">
         <div className="flex justify-between px-4 py-6 border-b-2">
           <h1 className="text-3xl">Dashboard</h1>
