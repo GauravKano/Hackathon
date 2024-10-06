@@ -14,6 +14,7 @@
     "@langchain/community": "^0.3.4",
     "@nanostores/react": "github:ai/react",
     "ai": "^3.4.9",
+    "firebase": "^10.14.0",
     "next": "14.2.14",
     "react": "^18",
     "react-dom": "^18",
