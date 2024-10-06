@@ -1,6 +1,7 @@
+"use client";
 import React from "react";
 
-function page() {
+function SignIn() {
   return (
     <div>
       <>sign_in</>
@@ -8,4 +9,4 @@ function page() {
   );
 }
 
-export default page;
+export default SignIn;
